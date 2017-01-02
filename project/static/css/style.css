@@ -33,6 +33,13 @@ h2 {
   height: 270px;
 }
 
+#self-tags{
+  font-family: "aktiv-grotesk", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  color: #5C4033;
+}
+
 #pinIcon, #icon {
     width: 70px;
     margin-left: 0px;
@@ -45,10 +52,10 @@ h2 {
 }
 
 #name {
-	font-family: "aktiv-grotesk", sans-serif;
+	font-family: "AdamCGPro", sans-serif;
 	font-weight: 200;
     font-size: 40px;
-    color: #fffff0;
+    color: #A0522D;
 }
 
 #heading {
@@ -74,7 +81,7 @@ h2 {
 	font-family: "aktiv-grotesk",sans-serif;
 	font-weight: 200;
     font-size: 20px;
-    color: #fffff0;
+    color: #344152;
     line-height: 2;
     vertical-align: text-bottom;
     margin-top: 20px;
@@ -82,13 +89,24 @@ h2 {
 
 
 #homepage {
-    background-image: url("images/home_background_water.jpg"); no-repeat; 
   	-webkit-background-size: 100% 100%;
   	-moz-background-size: 100% 100%;
   	-o-background-size: 100% 100%;
   	background-size: 100% 100%;
   	background-attachment: fixed;
   	margin: 0;
+}
+
+#parallax {
+    /* The image used */
+    height: 700px;
+    background-image: url("images/candles.jpg");  no-repeat; 
+    /* Set a specific height */
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #places {
@@ -103,17 +121,24 @@ h2 {
 
 #main_heading {
 	background: rgba(0,0,0,0);
-	margin-top: 150px;
+	margin-top: 10px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 
-#main-navigation .pull-right{
-	color: #fffff0;
+#main-navigation {
+	color: #5C4033;
 	font-family: "letter-gothic-std";
 	margin-top: 10px;
-	padding-left: 20px;
+	padding-left: 50px;
+}
+
+#main-navigation a{
+  padding-right: 50px;
+  color: #5C4033;
 }
 .navbar-default .navbar-brand {
-	color: #fffff0;
+	color: #5C4033;
 	font-weight: 300;
 	font-family: "Fibon_Sans_Regular"
 	font-size: 30px;
