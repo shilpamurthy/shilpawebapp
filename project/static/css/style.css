@@ -1,0 +1,139 @@
+/* custom styles */
+
+h1 {
+  font-family: "Fibon_Sans_Regular", sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: #fffff0;
+}
+
+h2 {
+  font-family: "aktiv-grotesk", sans-serif;
+  font-weight: 200;
+  font-size: 25px;
+  color: #fffff0;
+  margin-top: 15px;
+}
+
+#date {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+
+.jumbotron .h1, .jumbotron h1 {
+	font-family: "Fibon_Sans_Regular", sans-serif;
+    font-size: 100px;
+    font-weight: 300;
+    color: #fffff0;
+}
+
+.book-image {
+  width: 200px;
+  height: 270px;
+}
+
+#pinIcon, #icon {
+    width: 70px;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+#video{
+  margin-left: 60px;
+  margin-bottom: 40px;
+}
+
+#name {
+	font-family: "aktiv-grotesk", sans-serif;
+	font-weight: 200;
+    font-size: 40px;
+    color: #fffff0;
+}
+
+#heading {
+	font-family: "aktiv-grotesk", sans-serif;
+	font-weight: 200;
+    font-size: 25px;
+    color: #fffff0;
+}
+
+#video_description, li {
+	font-family: "aktiv-grotesk", sans-serif;
+	font-weight: 200;
+    font-size: 15px;
+    color: #fffff0;
+    line-height: 2;
+}
+
+#content {
+	vertical-align: text-bottom;
+}
+
+#content .h2, #content h2 {
+	font-family: "aktiv-grotesk",sans-serif;
+	font-weight: 200;
+    font-size: 20px;
+    color: #fffff0;
+    line-height: 2;
+    vertical-align: text-bottom;
+    margin-top: 20px;
+}
+
+
+#homepage {
+    background-image: url("images/home_background_water.jpg"); no-repeat; 
+  	-webkit-background-size: 100% 100%;
+  	-moz-background-size: 100% 100%;
+  	-o-background-size: 100% 100%;
+  	background-size: 100% 100%;
+  	background-attachment: fixed;
+  	margin: 0;
+}
+
+#places {
+    background-image: url("images/home_background_dark.jpg"); no-repeat; 
+  	-webkit-background-size: 100% 100%;
+  	-moz-background-size: 100% 100%;
+  	-o-background-size: 100% 100%;
+  	background-size: 100% 100%;
+  	background-attachment: fixed;
+  	margin: 0;
+}
+
+#main_heading {
+	background: rgba(0,0,0,0);
+	margin-top: 150px;
+}
+
+#main-navigation .pull-right{
+	color: #fffff0;
+	font-family: "letter-gothic-std";
+	margin-top: 10px;
+	padding-left: 20px;
+}
+.navbar-default .navbar-brand {
+	color: #fffff0;
+	font-weight: 300;
+	font-family: "Fibon_Sans_Regular"
+	font-size: 30px;
+}
+
+.navbar, .navbar-default{
+	background: rgba(0,0,0,0);
+	border:0px;
+	font-family: "aktiv-grotesk", sans-serif;
+	font-weight: 200;
+    font-size: 20px;
+    margin-top: 50px;
+}
+
+@font-face {
+	font-family: AdamCGPro;
+	src: url("fonts/AdamCGPro.otf") format("opentype");
+}
+
+@font-face {
+	font-family: Fibon_Sans_Regular;
+	src: url("fonts/Fibon_Sans_Regular.otf") format("opentype");
+}

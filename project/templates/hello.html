@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <script src="https://use.typekit.net/gwn8xdb.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+    <meta charset="UTF-8">
+    <title>Flask React hello</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+  </head>
+  <body id="homepage">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/hello">Home</a>
+        </div>
+        <ul class="nav navbar-nav pull-right" id="main-navigation">
+          <a class="pull-right"> Books </a>
+          <a class="pull-right" href="/dance"> Dance </a>
+          <a class="pull-right" href="/places"> Places </a>
+          <a class="pull-right"> Thoughts </a>
+          <a class="pull-right"> Fitness </a>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron" id="main_heading">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-8" id="content"> 
+            <h2> Hi! I am Shilpa. I graduated from Carnegie Mellon a year ago and moved to the Bay Area :D I love dancing, running, hiking, reading books, talking about the quasars, meeting new people and exploring this wonderful Earth (and hopefully Mars one day). I have a few thoughts on a bunch of things so check em out! </h2>
+          </div>
+          <div class="col-sm-4">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-12">
+                  <h1 id="name" style="text-align: -webkit-center;">SHILPA MURTHY</h1>
+                  <br>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <img src="{{ url_for('static', filename='css/images/profile.jpg') }}" class="img-circle" width="150" height="150" style="margin: auto; display: -webkit-box;"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="icon-preview-box col-sm-4 large-icons" href="http://www.twitter.com/shilpamurthy93">
+                  <div class="icon-social-twitter">
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- scripts -->
+    <script src="//fb.me/react-0.14.3.min.js"></script>
+    <script src="//fb.me/react-dom-0.14.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+    <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/react//react-dom.min.js') }}"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+
+  </body>
+</html>
