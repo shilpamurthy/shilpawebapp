@@ -1,4 +1,56 @@
 /* custom styles */
+.fade {
+   opacity: 1;
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+   }
+
+.fade:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+#marker_dance, #marker_dance i{
+  color: #fffff0;
+  font-size: 50px;
+  text-align: -webkit-center;
+}
+
+#modal_video {
+  opacity: 1;
+}
+
+#yt_video {
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+#video_row {
+  padding-left: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+}
+
+#video_heading h1{
+  text-align: -webkit-center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  margin-bottom: 50px;
+}
+
+#video_blurb {
+  text-align: -webkit-center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  margin-bottom: 50px;
+  margin-left: 70px;
+}
+
+#video_date{
+  text-align: -webkit-center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+}
 
 h1 {
   font-family: "Fibon_Sans_Regular", sans-serif;
@@ -34,9 +86,9 @@ h2 {
 }
 
 #self-tags{
-  font-family: "aktiv-grotesk", sans-serif;
+  font-family: "Bilbo Swash Caps";
   font-weight: 200;
-  font-style: italic;
+  font-size: 30px;
   color: #5C4033;
 }
 
@@ -132,13 +184,16 @@ h2 {
 	margin-top: 10px;
 	padding-left: 50px;
 }
-
+#navbar-navigation a{
+  padding-right: 50px;
+  color: #fffff0;
+}
 #main-navigation a{
   padding-right: 50px;
   color: #5C4033;
 }
 .navbar-default .navbar-brand {
-	color: #5C4033;
+	color: #fffff0;
 	font-weight: 300;
 	font-family: "Fibon_Sans_Regular"
 	font-size: 30px;
@@ -161,4 +216,39 @@ h2 {
 @font-face {
 	font-family: Fibon_Sans_Regular;
 	src: url("fonts/Fibon_Sans_Regular.otf") format("opentype");
+}
+
+.modal-backdrop.in {
+    filter: alpha(opacity=7);
+    opacity: 0.7;
+}
+ 
+.modal-content {
+    background: none;
+    border: 0;
+    -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0;
+    -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
+}
+ 
+.modal-body {
+    padding: 0 25px 25px 25px;
+}
+ 
+.modal-header {
+    padding: 25px 25px 15px 25px;
+    text-align: right;
+}
+ 
+.modal-header, .modal-footer {
+    border: 0;
+}
+ 
+.modal-header .close {
+    float: none;
+    margin: 0;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: none;
+    opacity: 1;
 }

@@ -1,56 +1,91 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var DanceVideos = React.createClass ({displayName: "DanceVideos",
+var Modal = ReactBootstrap.Modal;
+var Button = ReactBootstrap.Button;
+var Image = ReactBootstrap.Image;
 
-    render : function() {
-    	var danceVideos = this.props.videoList;
-    	var pinVideoList = this.props.pinVideoList;
-       	return (
-        React.createElement("div", null, 
-          	React.createElement("div", {className: "row"}, 
-        		React.createElement("div", {className: "col-sm-2", id: "pinIcon"}, 
-          			React.createElement("img", {src: "static/css/icons/glyphicons-239-pin.png"})
-        		), 
-        		React.createElement("div", {className: "col-sm-6"}, 
-         			React.createElement("h1", {id: "heading"}, " Pinned Videos (New show on Nov 20th!) ")
-        		)
-     		), 
-     		 pinVideoList.map(function(danceVideo) {
-              function getInnerHtml() {return {__html: danceVideo.video_description};};
-              return (
-                React.createElement("div", {className: "row", id: "video"}, 
-                  React.createElement("div", {className: "col-sm-6"}, 
-                      React.createElement("iframe", {width: "500", height: "281", id: "yt_video", src:  danceVideo.url, frameborder: "0", allowfullscreen: true})
-                  ), 
-                  React.createElement("div", {className: "col-sm-6", id: "video_description", dangerouslySetInnerHTML: getInnerHtml()}
-                  )
-                )
-              )}), 
-          	
-          	React.createElement("div", {className: "row"}, 
-        		React.createElement("div", {className: "col-sm-6 col-sm-offset-2"}, 
-         			React.createElement("h1", {id: "heading"}, " Few of my favorite things ")
-        		)
-     		), 
-     		React.createElement("br", null), 
-             danceVideos.map(function(danceVideo) {
-              function getInnerHtml() {return {__html: danceVideo.video_description};};
-              return (
-                React.createElement("div", {className: "row", id: "video"}, 
-                  React.createElement("div", {className: "col-sm-6"}, 
-                      React.createElement("iframe", {width: "500", height: "281", id: "yt_video", src:  danceVideo.url, frameborder: "0", allowfullscreen: true})
-                  ), 
-                  React.createElement("div", {className: "col-sm-6", id: "video_description", dangerouslySetInnerHTML: getInnerHtml()}
-                  )
-                )
-              )}) 
-          	
-        )
-        )
-      }
-    }); 
+var DanceVideo = React.createClass({displayName: "DanceVideo",
 
-var videoList = [{"url": "https://www.youtube.com/embed/9EMAst0liKE", "video_description": "Dance is meant to be a medium to convey your ideas in the most physically beautiful way. I love pieces that combine costume theme, color scheme, prop work, lightwork, shadows and aesthetics to convey a message. <br> <br> This piece talks about an abusive relationship and how greed, ego and complacency plays into the relationship. +1 for costume color and props. <br> <br> +1 for Jade Chynoweth who is a bad ass and kills it at every dance number. "}, {"url": "https://www.youtube.com/embed/-rxSL0DTiPU", "video_description": "This piece has become my most favorite piece of artwork. The song is in Kannada which is a South Indian language (and my mother tounge), and the dance form is modern with tones of contemporary. The music starts around 0:47s and dance starts around 1:18s. <br> <br> All lifts are effortless and the stunt at 0:48 is my favorite. <br> <br> Props to the girl for doing floorwork in a dress. (My legs are all black and blue from doing floorwork in a studio -_-) <br> <br> +1 for drone shot"}, {"url" : "https://www.youtube.com/embed/Xcn-JhB7C78", "video_description" : "I was a part of a competitive dance team called Carnegie Mellon Raasta in college (and for a year when I was out of college). <br> <br> I've definitely had my most formative moments with this team, but to watch something you've built continue beyond you is a humbling and satisfying feeling.<br> <br> This is us at Raas All Stars National Championship 2015. It's been a great time dancing with this wonderful team."}];
-var pinVideoList = [{"url": "https://www.youtube.com/embed/91A3i6spzf4", "video_description": "I performed with some lovely ladies at the Mona Khan Dance Company dance show. <br> <li> Dancer knee pads are a blessing <br> <br> <li> I want to wear the costume 24/7.<br> <br> <li> My dance instructor Sumana is an amazing human. <br> <br> <li> Check out <a href=\"http://www.monakhancompany.com/home.html\"> http://www.monakhancompany.com/home.html </a>. I dance in the Mountain View Advanced class and teach 1 class in Cupertino/San Jose and 2 classes in Santa Clara. </p>"}]
-ReactDOM.render(React.createElement(DanceVideos, {pinVideoList:  pinVideoList, videoList:  videoList }), document.getElementById('dance'));
+  render: function(){
+    var myVideoList = this.props.myVideoList;
+    var videoList = this.props.videoList;
+    return(
+      React.createElement("div", null, 
+        React.createElement("div", {className: "row", id: "video_heading"}, 
+          React.createElement("h1", null, " Showcases ")
+        ), 
+        React.createElement("div", {className: "row", id: "video_row"}, 
+          
+            myVideoList.map(function(danceVideo){
+              return (
+                React.createElement("div", {className: "col-sm-3"}, 
+                  React.createElement(VideoModal, {url:  danceVideo.url, about:  danceVideo.video_description, image_thumb:  danceVideo.image_thumb, date:  danceVideo.date})
+                )
+              );
+            })
+          
+        ), 
+        React.createElement("br", null), 
+        React.createElement("br", null), 
+        React.createElement("br", null), 
+        React.createElement("div", {className: "row", id: "marker_dance"}, 
+          React.createElement("i", {className: "material-icons"}, "expand_more")
+        ), 
+        React.createElement("br", null), 
+        React.createElement("div", {className: "row", id: "video_heading"}, 
+          React.createElement("h1", null, " Some pieces I like ")
+        ), 
+        React.createElement("div", {className: "row", id: "video_row"}, 
+          
+            videoList.map(function(danceVideo){
+              return (
+                React.createElement("div", {className: "col-sm-3"}, 
+                  React.createElement(VideoModal, {url:  danceVideo.url, about:  danceVideo.video_description, image_thumb:  danceVideo.image_thumb, date:  danceVideo.date})
+                )
+              );
+            })
+          
+        )
+      )
+    );
+  }
+});
+var VideoModal = React.createClass({displayName: "VideoModal",
+    getInitialState: function() {
+        return { isModalOpen: false };
+    },
+
+    openModal: function() {
+      console.log(this.state.isModalOpen);
+        this.setState({ isModalOpen: true });
+    },
+
+    closeModal: function() {
+        this.setState({ isModalOpen: false });
+    },
+
+    render: function() {
+      var url = this.props.url;
+      var about = this.props.about;
+      var image_thumb = this.props.image_thumb;
+      var date = this.props.date
+        return (
+          React.createElement("div", {className: "app"}, 
+            React.createElement(Image, {className: "fade", width: "270", height: "200", onClick: this.openModal, src:  image_thumb }), 
+            React.createElement("h2", {id: "video_date"}, " ",  date, " "), 
+            React.createElement(Modal, {isOpen: this.state.isModalOpen, show: this.state.isModalOpen, id: "modal_video"}, 
+              React.createElement("div", {className: "body"}, 
+                React.createElement("iframe", {width: "700", height: "394", id: "yt_video", src:  url, frameborder: "0", allowfullscreen: true}), 
+                React.createElement("h2", {id: "video_blurb"}, " ",  about, " ")
+              ), 
+              React.createElement(Button, {onClick: this.closeModal}, "Close modal")
+            )
+          )
+        );
+    }
+});
+var videoList = [{"url": "https://www.youtube.com/embed/9EMAst0liKE", "video_description": "I love this piece because it sends a message about strength and choices.", "image_thumb": "http://i3.ytimg.com/vi/9EMAst0liKE/hqdefault.jpg", "date":"2016"}, {"url": "https://www.youtube.com/embed/-rxSL0DTiPU", "video_description": "This piece shows how dance and breath come together in harmony.", "image_thumb": "http://i3.ytimg.com/vi/-rxSL0DTiPU/hqdefault.jpg", "date":"2016"}, {"url" : "https://www.youtube.com/embed/YQkcnuZED7U", "video_description" : "I love this piece because it talks about strength, equality and comradarie.", "image_thumb": "http://i3.ytimg.com/vi/YQkcnuZED7U/hqdefault.jpg", "date":"2016"}];
+var pinVideoList = [{"url": "https://www.youtube.com/embed/91A3i6spzf4", "video_description": "Mona Khan Dance Company Spring Showcase"}]
+var myVideoList = [{"url": "https://www.youtube.com/embed/X5VbDdyhuDY", "video_description": "Mona Khan Dance Company Fall Show 2016", "image_thumb": "static/css/images/videoThumbnails/mkc2.jpg", "date": "Fall 2016"}, {"url": "https://www.youtube.com/embed/91A3i6spzf4?wmode=opaque", "video_description": "Mona Khan Dance Company Spring Showcase 2016", "image_thumb": "static/css/images/videoThumbnails/mkc1.jpg", "date": "Spring 2016"}, {"url": "https://www.youtube.com/embed/JsiLkZp99fQ?wmode=opaque", "video_description": "CMU Raasta Raas Royalty: 2016", "image_thumb": "static/css/images/videoThumbnails/raas1.jpg", "date": "Spring 2016"}, {"url": "https://www.youtube.com/embed/Xcn-JhB7C78?wmode=opaque", "video_description": "CMU Raasta National Championship: 2015", "image_thumb": "static/css/images/videoThumbnails/raas2.jpg", "date": "Spring 2015"}]
+ReactDOM.render(React.createElement(DanceVideo, {myVideoList:  myVideoList, videoList:  videoList }), document.getElementById('videos'));
 
 },{}]},{},[1]);

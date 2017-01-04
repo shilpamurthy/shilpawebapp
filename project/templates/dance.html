@@ -9,6 +9,8 @@
     <!-- styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body id="places">
     <nav class="navbar navbar-default">
@@ -16,18 +18,19 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/hello">Home</a>
         </div>
-        <ul class="nav navbar-nav pull-right" id="main-navigation">
+        <ul class="nav navbar-nav pull-right" id="navbar-navigation">
           <a class="pull-right" href="/books"> Books </a>
-          <a class="pull-right" href="/dance"> Dance </a>
-          <a class="pull-right" href="/places"> Places </a>
-          <a class="pull-right"> Thoughts </a>
-          <a class="pull-right"> Fitness </a>
+          <a class="pull-right" href="/photos"> Photography </a>
+          <a class="pull-right" href="/gwc"> Girls Who Code </a>
+          <a class="pull-right" href="/travel"> Travel </a>
         </ul>
       </div>
     </nav>
     <div class="container-fluid">
-      <div id="videos">
-      </div>
+        <div class="row">
+           <div id="videos">
+           </div>
+         </div>
     </div>
         <!-- scripts -->
     <script src="//fb.me/react-0.14.3.min.js"></script>
@@ -36,7 +39,9 @@
 
     <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
     <script src="{{ url_for('static', filename='bower_components/react//react-dom.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='scripts/js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/react-bootstrap/react-bootstrap.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.7/react-bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/js/dance.js') }}"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
   </body>
 </html>

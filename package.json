@@ -17,6 +17,8 @@
     "reactify": "^1.1.1"
   },
   "dependencies": {
-    "react-image-component": "^1.0.0"
+    "react-bootstrap": "^0.30.7",
+    "react-image-component": "^1.0.0",
+    "react-modal-bootstrap": "^1.1.0"
   }
 }
