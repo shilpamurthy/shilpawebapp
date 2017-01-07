@@ -25,6 +25,10 @@ def dance():
 def books():
 	return render_template('books.html')
 
+@app.route('/gwc')
+def gwc():
+	return render_template('gwc.html')
+
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))

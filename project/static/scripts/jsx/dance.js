@@ -23,12 +23,10 @@ var DanceVideo = React.createClass({
             })
           }
         </div>
-        <br/>
-        <br/>
-        <br/>
         <div className="row" id="marker_dance">
           <i className="material-icons">expand_more</i>
         </div>
+        <br/>
         <br/>
         <div className="row" id="video_heading">
           <h1> Some pieces I like </h1>
@@ -37,7 +35,7 @@ var DanceVideo = React.createClass({
           {
             videoList.map(function(danceVideo){
               return (
-                <div className="col-sm-3">
+                <div className="col-sm-4">
                   <VideoModal url={ danceVideo.url } about={ danceVideo.video_description } image_thumb={ danceVideo.image_thumb } date={ danceVideo.date }/>
                 </div>
               );

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <script src="https://use.typekit.net/gwn8xdb.js"></script>
+    <script>try{Typekit.load({ async: false });}catch(e){}</script>
+    <meta charset="UTF-8">
+    <title>Girls Who Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One|Quicksand:300" rel="stylesheet">
+  </head>
+  <body id="gwc_body">
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid" >
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/hello">Home</a>
+        </div>
+        <ul class="nav navbar-nav pull-right" id="navbar-navigation">
+          <a class="pull-right" href="/books"> Books </a>
+          <a class="pull-right" href="/photos"> Photography </a>
+          <a class="pull-right" href="/dance"> Dance </a>
+          <a class="pull-right" href="/travel"> Travel </a>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid" style="margin-bottom: 40px; margin-top: 40px;">
+        <div class="row">
+           <div id="gwc">
+              <h1 id="gwc_heading" style="padding-bottom: 20px; "> Girls Who Code and Work </h1>
+              <div class="container-fluid">
+                <div class="row">
+                  <h1 id="gwc_heading" style="padding-bottom: 40px;"> Schedule and Place </h1>
+                </div>
+                <div class="row" style="margin-left: 20px">
+                  <div class="col-sm-4" style="text-align: -webkit-center" id="vertical_line">
+                    <h2>Place</h2>
+                  </div>
+                  <div class="col-sm-4" style="text-align: -webkit-center" id="vertical_line">
+                    <h2>Time</h2>
+                  </div>
+                  <div class="col-sm-4" style="text-align: -webkit-center">
+                    <h2>Facilitator</h2>
+                  </div>
+                </div>
+                <div class="row" style="margin-left: 20px; margin-bottom: 70px;">
+                  <div class="col-sm-4" style="text-align: -webkit-center" id="vertical_line">
+                    <h2>MLK San Jose Public Library</h2>
+                  </div>
+                  <div class="col-sm-4" style="text-align: -webkit-center" id="vertical_line">
+                    <h2>Tuesdays 5:00PM - 7:00PM</h2>
+                  </div>
+                  <div class="col-sm-4" style="text-align: -webkit-center">
+                    <h2>Shilpa Murthy</h2>
+                  </div>
+                </div>
+                <div class="row" id="marker_dance">
+                  <i class="material-icons">expand_more</i>
+                </div>
+                <div class="row">
+                  <h1 id="gwc_heading" style="padding-bottom: 40px;"> What we are cooking... </h1>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12" id="gwc_content" style="margin-left: 20px; margin-bottom: 70px;">
+                    <p> The girls are working on a web application that will help high school students prioritize and schedule academics, physical and mental strength, extra curricular activities, stress and sleep. The girls already reseached many existing web and mobile applications, noting down the functionalities and short-comings of each application. They have further narrowed down the specific functionalities that they would like to incorporate in their application. They are now learning Python, HTML and CSS so that they can implement this. </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <h1 id="gwc_heading" style="padding-bottom: 40px;"> Join Us! </h1>
+                </div>
+                <div class="row" style="margin-left: 20px;  margin-bottom: 70px;">
+                  <div class="col-sm-4" style="text-align: -webkit-center" id="vertical_line">
+                    <h2>Contact</h2>
+                  </div>
+                  <div class="col-sm-4" style="text-align: -webkit-center">
+                    <h2>Edith Sutterlin at (408) 808-2000</h2>
+                  </div>
+                </div>
+                <div class="row">
+                  <h1 id="gwc_heading" style="padding-bottom: 40px;"> About </h1>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <img src="{{ url_for('static', filename='css/images/gwc/gwc_tag.jpg') }}" style="margin: auto; display: -webkit-box;margin-left: 70px; height: 230px; width: 500px"/>
+                  </div>
+                  <div class="col-sm-6" id="gwc_content">
+                    <p> Girls Who Code was founded with a single mission: to close the gender gap in technology </p>
+                    <br>
+                    <p> It was founded by Reshma in New York and has grown from 20 girls to over 10,000 girls in 42 statles. When girls learn to code, they become change agents in their communities. Whether it’s a game to illustrate </p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12" id="gwc_content" style="margin-left: 50px">
+                    <p>the experience of an undocumented immigrant or a website to provide free college prep, our girls create technology that makes the world a better place. When powerful people are taught the skills and given the ability to have their voice heard, they can make powerful changes. </p>
+                  </div>
+                </div>
+              </div>
+           </div>
+         </div>
+    </div>
+        <!-- scripts -->
+    <script src="//fb.me/react-0.14.3.min.js"></script>
+    <script src="//fb.me/react-dom-0.14.3.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+
+    <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/react//react-dom.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/react-bootstrap/react-bootstrap.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.7/react-bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/js/dance.js') }}"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+  </body>
+</html>
+

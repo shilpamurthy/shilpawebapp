@@ -24,12 +24,10 @@ var DanceVideo = React.createClass({displayName: "DanceVideo",
             })
           
         ), 
-        React.createElement("br", null), 
-        React.createElement("br", null), 
-        React.createElement("br", null), 
         React.createElement("div", {className: "row", id: "marker_dance"}, 
           React.createElement("i", {className: "material-icons"}, "expand_more")
         ), 
+        React.createElement("br", null), 
         React.createElement("br", null), 
         React.createElement("div", {className: "row", id: "video_heading"}, 
           React.createElement("h1", null, " Some pieces I like ")
@@ -38,7 +36,7 @@ var DanceVideo = React.createClass({displayName: "DanceVideo",
           
             videoList.map(function(danceVideo){
               return (
-                React.createElement("div", {className: "col-sm-3"}, 
+                React.createElement("div", {className: "col-sm-4"}, 
                   React.createElement(VideoModal, {url:  danceVideo.url, about:  danceVideo.video_description, image_thumb:  danceVideo.image_thumb, date:  danceVideo.date})
                 )
               );

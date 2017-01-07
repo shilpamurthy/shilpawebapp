@@ -19,6 +19,7 @@
   "dependencies": {
     "react-bootstrap": "^0.30.7",
     "react-image-component": "^1.0.0",
-    "react-modal-bootstrap": "^1.1.0"
+    "react-modal-bootstrap": "^1.1.0",
+    "react-scroll": "^1.4.4"
   }
 }
