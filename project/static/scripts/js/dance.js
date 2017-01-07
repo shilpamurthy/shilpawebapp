@@ -24,11 +24,6 @@ var DanceVideo = React.createClass({displayName: "DanceVideo",
             })
           
         ), 
-        React.createElement("div", {className: "row", id: "marker_dance"}, 
-          React.createElement("i", {className: "material-icons"}, "expand_more")
-        ), 
-        React.createElement("br", null), 
-        React.createElement("br", null), 
         React.createElement("div", {className: "row", id: "video_heading"}, 
           React.createElement("h1", null, " Some pieces I like ")
         ), 

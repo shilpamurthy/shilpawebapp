@@ -1,58 +1,101 @@
-var DirectLink = Scroll.DirectLink;
-var Element    = Scroll.Element;
-var Events     = Scroll.Events;
-var scroll     = Scroll.animateScroll;
-var scrollSpy  = Scroll.scrollSpy;
-
-var SmoothScroll = React.createClass({
-  componentDidMount: function() {
-
-    Events.scrollEvent.register('begin', function(to, element) {
-      console.log("begin", arguments);
-    });
-
-    Events.scrollEvent.register('end', function(to, element) {
-      console.log("end", arguments);
-    });
-
-    scrollSpy.update();
-
-  },
-  componentWillUnmount: function() {
-    Events.scrollEvent.remove('begin');
-    Events.scrollEvent.remove('end');
-  },
-  scrollToTop: function() {
-    scroll.scrollToTop();
-  },
-  scrollToBottom: function() {
-    scroll.scrollToBottom();
-  },
-  scrollTo: function() {
-    scroll.scrollTo(100);
-  },
-  scrollMore: function() {
-    scroll.scrollMore(100);
-  },
-  handleSetActive: function(to) {
-    console.log(to);
-  },
+var App = React.createClass({
   render: function () {
-    return (
-      <div>
-        <a onClick={this.scrollToTop}>To the top!</a>
-        <br/>
-        <a onClick={this.scrollToBottom}>To the bottom!</a>
-        <br/>
-        <a onClick={this.scrollTo}>Scroll to 100px from the top</a>
-        <br/>
-        <a onClick={this.scrollMore}>Scroll 100px more from the current position!</a>
-      </div>
-    );
+    return <div><SmoothScroll /></div>;
   }
 });
 
-ReactDOM.render(
-  <SmoothScroll />,
-  document.getElementById('smoothscroll')
-);
+var smoothScroll = {
+  timer: null,
+
+  stop: function () {
+    clearTimeout(this.timer);
+  },
+
+  scrollTo: function (id, callback) {
+    var settings = {
+      duration: 1000,
+      easing: {
+        outQuint: function (x, t, b, c, d) {
+          return c*((t=t/d-1)*t*t*t*t + 1) + b;
+        }
+      }
+    };
+    var percentage;
+    var startTime;
+    var node = document.getElementById(id);
+    var nodeTop = node.offsetTop;
+    var nodeHeight = node.offsetHeight;
+    var body = document.body;
+    var html = document.documentElement;
+    var height = Math.max(
+      body.scrollHeight,
+      body.offsetHeight,
+      html.clientHeight,
+      html.scrollHeight,
+      html.offsetHeight
+    );
+    var windowHeight = window.innerHeight
+    var offset = window.pageYOffset;
+    var delta = nodeTop - offset;
+    var bottomScrollableY = height - windowHeight;
+    var targetY = (bottomScrollableY < delta) ?
+      bottomScrollableY - (height - nodeTop - nodeHeight + offset):
+      delta;
+    targetY = 700;
+
+    startTime = Date.now();
+    percentage = 0;
+
+    if (this.timer) {
+      clearInterval(this.timer);
+    }
+
+    function step () {
+      var yScroll;
+      var elapsed = Date.now() - startTime;
+
+      if (elapsed > settings.duration) {
+        clearTimeout(this.timer);
+      }
+
+      percentage = elapsed / settings.duration;
+
+      if (percentage > 1) {
+        clearTimeout(this.timer);
+
+        if (callback) {
+          callback();
+        }
+      } else {
+        yScroll = settings.easing.outQuint(0, elapsed, offset, targetY, settings.duration);
+        window.scrollTo(0, yScroll);
+        this.timer = setTimeout(step, 10);     
+      }
+    }
+
+    this.timer = setTimeout(step, 10);
+  }
+};
+
+var SmoothScroll = React.createClass({
+
+  render: function () {
+    return (
+      <div className="smooth-scroll">
+        <p className="self_tags" id="top" onClick={this.handleTopClick}>Get to Know Me</p>
+        <div className="smooth-scroll--spacer" />
+        <p id="bottom" onClick={this.handleBottomClick}></p>
+      </div>
+    );
+  },
+
+  handleTopClick: function () {
+    smoothScroll.scrollTo('bottom');
+  },
+
+  handleBottomClick: function () {
+    smoothScroll.scrollTo('top');
+  }
+});
+
+ReactDOM.render(<App />, document.getElementById('videos'));

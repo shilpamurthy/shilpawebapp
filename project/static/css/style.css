@@ -102,6 +102,18 @@ h2 {
   color: #5C4033;
 }
 
+.self_tags{
+  font-family: "Bilbo Swash Caps";
+  font-weight: 200;
+  font-size: 30px;
+  color: #fcf8e3;
+  margin-top: 30px;
+}
+
+.self_tags:hover {
+  cursor: pointer;
+}
+
 #pinIcon, #icon {
     width: 70px;
     margin-left: 0px;

@@ -23,11 +23,6 @@ var DanceVideo = React.createClass({
             })
           }
         </div>
-        <div className="row" id="marker_dance">
-          <i className="material-icons">expand_more</i>
-        </div>
-        <br/>
-        <br/>
         <div className="row" id="video_heading">
           <h1> Some pieces I like </h1>
         </div>

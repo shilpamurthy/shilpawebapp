@@ -4,30 +4,34 @@
     <script src="https://use.typekit.net/gwn8xdb.js"></script>
     <script>try{Typekit.load({ async: false });}catch(e){}</script>
     <meta charset="UTF-8">
-    <title>Flask React hello</title>
+    <title>Dance</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- styles -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One|Quicksand:300" rel="stylesheet">
   </head>
-  <body id="places">
-    <nav class="navbar navbar-default">
+  <body id="dance_body">
+    <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="/hello">Home</a>
         </div>
-        <ul class="nav navbar-nav pull-right" id="main-navigation">
-          <a class="pull-right"> Books </a>
-          <a class="pull-right" href="/dance"> Dance </a>
-          <a class="pull-right" href="/places"> Places </a>
-          <a class="pull-right"> Thoughts </a>
-          <a class="pull-right"> Fitness </a>
+        <ul class="nav navbar-nav pull-right" id="navbar-navigation">
+          <a class="pull-right" href="/books"> Books </a>
+          <a class="pull-right" href="/photos"> Photography </a>
+          <a class="pull-right" href="/gwc"> Girls Who Code </a>
+          <a class="pull-right" href="/travel"> Travel </a>
         </ul>
       </div>
     </nav>
-    <div class="container-fluid">
-      <div class="row" id='videos'>
-      </div>
+    <div class="container-fluid" style="margin-top: 40px;">
+        <div class="row">
+           <div id="videos">
+           </div>
+         </div>
     </div>
         <!-- scripts -->
     <script src="//fb.me/react-0.14.3.min.js"></script>
@@ -36,53 +40,10 @@
 
     <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
     <script src="{{ url_for('static', filename='bower_components/react//react-dom.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bower_components/react-bootstrap/react-bootstrap.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.7/react-bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/js/hello.js') }}"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
-    <script type="text/jsx">
-
-      /*** @jsx React.DOM */
-      var DanceVideos = React.createClass ({
-
-      // var mapper = function(danceVideo) {
-      //   return (
-      //     <div>
-      //       <div class="col-sm-6">
-      //           <iframe width="500" height="281" id="yt_video" src={ danceVideo.url } frameborder="0" allowfullscreen></iframe>
-      //       </div>
-      //       <div class="col-sm-6">
-      //          { danceVideo.video_description }
-      //       </div>
-      //     </div>
-      //   )
-      // };
-
-      render : function() {
-        var danceVideos = this.props.videoList;
-
-        return (
-          <div>
-            { danceVideos.map(function(danceVideo) {
-              function getInnerHtml() {return {__html: danceVideo.video_description};};
-              return (
-                <div className="row" id="video">
-                  <div className="col-sm-6">
-                      <iframe width="500" height="281" id="yt_video" src={ danceVideo.url } frameborder="0" allowfullscreen></iframe>
-                  </div>
-                  <div className="col-sm-6" id="video_description" dangerouslySetInnerHTML={getInnerHtml()}>
-                  </div>
-                </div>
-              )
-            }) 
-          }
-          </div>
-        )
-      }
-    }); 
-
-    var videoList = [{"url": "https://www.youtube.com/embed/9EMAst0liKE", "video_description": "Dance is meant to be a medium to convey your ideas in the most physically beautiful way. I love pieces that combine costume theme, color scheme, prop work, lightwork, shadows and aesthetics to convey a message. <br> <br> This piece talks about an abusive relationship and how greed, ego and complacency plays into the relationship. +1 for costume color and props. <br> <br> +1 for Jade Chynoweth who is a bad ass and kills it at every dance number. "}, {"url": "https://www.youtube.com/embed/-rxSL0DTiPU", "video_description": "This piece has become my most favorite piece of artwork. The song is in Kannada which is a South Indian language (and my mother tounge), and the dance form is modern with tones of contemporary. The music starts around 0:47s and dance starts around 1:18s. <br> <br> All lifts are effortless and the stunt at 0:48 is my favorite. <br> <br> Props to the girl for doing floorwork in a dress. (My legs are all black and blue from doing floorwork in a studio -_-) <br> <br> +1 for drone shot"}, {"url" : "https://www.youtube.com/embed/Xcn-JhB7C78", "video_description" : "I was a part of a competitive dance team called Carnegie Mellon Raasta in college (and for a year when I was out of college). <br> <br> I've definitely had my most formative moments with this team, but to watch something you've built continue beyond you is a humbling and satisfying feeling.<br> <br> This is us at Raas All Stars National Championship 2015. It's been a great time dancing with this wonderful team."}];
-
-    ReactDOM.render(<DanceVideos videoList={ videoList } />, document.getElementById('videos'));
-
-    </script>
   </body>
 </html>
 

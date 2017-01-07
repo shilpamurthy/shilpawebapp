@@ -15,7 +15,9 @@
   </head>
   <body id="homepage">
     <div id="parallax">
-      <div id="smoothscroll">
+      <div class="container-fluid">
+        <div class="row" id="videos">
+        </div>
       </div>
     </div>
     <div class="jumbotron" id="main_heading">
@@ -53,13 +55,13 @@
       </div>
     </div>
     <!-- scripts -->
-    <script src="{{ url_for('static', filename='scripts/js/hello.js') }}"></script>
     <script src="//fb.me/react-0.14.3.min.js"></script>
     <script src="//fb.me/react-dom-0.14.3.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
 
     <script src="{{ url_for('static', filename='bower_components/react/react.min.js') }}"></script>
     <script src="{{ url_for('static', filename='bower_components/react//react-dom.min.js') }}"></script>
+     <script src="{{ url_for('static', filename='scripts/js/hello.js') }}"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
 
   </body>
