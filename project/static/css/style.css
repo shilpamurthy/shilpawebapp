@@ -125,6 +125,23 @@
   cursor: pointer;
 }
 
+#travel_heading h1{
+  text-align: -webkit-center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+#travel_heading h2{
+  text-align: -webkit-center;
+}
+
+#travel_heading h1:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 #vertical_line {
   border-right: solid #fcf8e3;
 }
